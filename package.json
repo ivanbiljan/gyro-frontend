@@ -41,6 +41,19 @@
         ]
     },
     "devDependencies": {
+        "husky": "^7.0.4",
+        "lint-staged": "^12.3.3",
         "prettier": "^2.5.1"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*": [
+            "prettier --write .",
+            "git add"
+        ]
     }
 }
