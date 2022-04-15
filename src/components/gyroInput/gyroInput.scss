@@ -1,0 +1,31 @@
+@import "variables";
+
+.gyro-input {
+    .form-control-lg {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-size: $default-font-size;
+        line-height: $default-line-height;
+
+        &.form-control.is-invalid {
+            padding-right: 1rem;
+            &:focus {
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+        }
+
+        &:focus {
+            outline: 1px solid $green-color;
+            border-color: $green-color;
+        }
+
+        &.disabled {
+            opacity: 0.35;
+            cursor: default;
+            pointer-events: none;
+        }
+    }
+
+    .form-label {
+        font-weight: bold;
+    }
+}

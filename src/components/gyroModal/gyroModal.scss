@@ -1,0 +1,37 @@
+@import "variables";
+
+.gyro-modal {
+    font-family: "Roboto Mono";
+
+    .modal-title {
+        .btn-close {
+            color: $green-color;
+        }
+    }
+
+    .modal-header .modal-title {
+        font-weight: 700;
+    }
+    .modal-header,
+    .modal-footer {
+        border: none;
+    }
+
+    .modal-footer {
+        .btn {
+            border-radius: 7px;
+        }
+        .btn.btn-secondary {
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        .btn.btn-primary {
+            background-color: $default-color;
+            border-color: $green-color;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+            &:focus {
+                border-color: $green-color;
+            }
+        }
+    }
+}
