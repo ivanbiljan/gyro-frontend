@@ -1,7 +1,6 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { SupportedLanguageEnum } from "utils/enums";
-import { StringResources } from "./languageResource";
 
 i18n.use(initReactI18next).init({
     resources: {

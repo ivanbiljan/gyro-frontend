@@ -2,7 +2,7 @@ import { Form } from "react-bootstrap";
 import "./gyroInput.scss";
 
 export interface GyroInputProps {
-    placeholder?: string;
+    placeholder: string;
     onTextChange?: (event: any) => void;
     type: "text" | "password";
     defaultValue?: string;
@@ -12,6 +12,8 @@ export interface GyroInputProps {
     onEnterClick?: () => void;
     autofocus?: boolean;
     error?: string;
+    width?: string;
+    height?: string;
 }
 
 function GyroInput(props: GyroInputProps) {
@@ -20,43 +22,15 @@ function GyroInput(props: GyroInputProps) {
             props.onEnterClick();
         }
     };
-    
+
     return (
-        <div className="gyro-input">
-            {props.header ? (
-                <Form.Group>
-                    <Form.Label>{props.header}</Form.Label>
-                    <Form.Control
-                        size="lg"
-                        type={props.type}
-                        placeholder={props.placeholder ?? ""}
-                        onChange={props.onTextChange}
-                        defaultValue={props.defaultValue}
-                        disabled={props.disabled}
-                        value={props.value ?? undefined}
-                        onKeyPress={handleKeypress}
-                        autoFocus={props.autofocus}
-                        isInvalid={props.error != null}
-                    />
-                    <Form.Control.Feedback type="invalid">{props.error}</Form.Control.Feedback>
-                </Form.Group>
-            ) : (
-                <Form.Group>
-                    <Form.Control
-                        size="lg"
-                        type={props.type}
-                        placeholder={props.placeholder ?? ""}
-                        onChange={props.onTextChange}
-                        defaultValue={props.defaultValue}
-                        disabled={props.disabled}
-                        value={props.value ?? undefined}
-                        onKeyPress={handleKeypress}
-                        autoFocus={props.autofocus}
-                        isInvalid={props.error != null}
-                    />
-                    <Form.Control.Feedback type="invalid">{props.error}</Form.Control.Feedback>
-                </Form.Group>
-            )}
+        <div className="gyro-input-wrapper" style={{ width: props.width, height: props.height }}>
+            <input
+                className="gyro-input"
+                type={props.type}
+                placeholder={props.placeholder}
+                onKeyPress={handleKeypress}
+            />
         </div>
     );
 }

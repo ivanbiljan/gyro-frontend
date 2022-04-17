@@ -10,7 +10,6 @@ module.exports = merge(common, {
         new HtmlWebpackPlugin({
             // generates an HTML and automatically injects all your generated bundles
             template: "./src/index.html",
-            favicon: "./src/icon.ico",
         }),
         new webpack.DefinePlugin({
             process: { env: { REACT_APP_KEY: '"some uuid"' } },

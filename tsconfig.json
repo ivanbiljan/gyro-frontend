@@ -16,7 +16,7 @@
         "noEmitOnError": true,
         "noFallthroughCasesInSwitch": true, // Make sure all switch cases are handled
         "allowUnusedLabels": false, // Raise error when label is unused
-        "noUnusedLocals": true // Raise error when var is unused
+        "noUnusedLocals": false // Raise error when var is unused
     },
-    "include": ["src", "src/**/*", "index.d.ts"]
+    "include": ["src", "src/**/*", "index.d.ts", "declarations.d.ts"]
 }

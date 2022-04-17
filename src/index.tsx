@@ -3,8 +3,7 @@ import { render } from "react-dom";
 import { Provider } from "react-redux"; // import the provider
 import { BrowserRouter } from "react-router-dom";
 import "regenerator-runtime/runtime";
-import App from "./app";
-import "./bootsrap-custom.scss";
+import { App } from "./app";
 import "./index.scss";
 import { store } from "./redux/store"; // import your store
 import "./utils/language/languangeClient";
