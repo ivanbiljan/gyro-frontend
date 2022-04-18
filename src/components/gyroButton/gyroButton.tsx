@@ -19,6 +19,7 @@ function GyroButton(props: GyroButtonProps) {
                 height: props.height,
                 backgroundColor: props.color,
                 color: props.textColor,
+                
             }}
         >
             {props.text}
