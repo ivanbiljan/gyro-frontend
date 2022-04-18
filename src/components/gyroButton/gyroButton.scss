@@ -1,3 +1,5 @@
+@import "./../../variables.module";
+
 .gyro-button {
     // background-color: #0056ca;
     // color: white;
@@ -6,6 +8,17 @@
     border-style: none;
 
     font-weight: 600;
+
+    &-blue {
+        background-color: $blue-color;
+        color: $white-color;
+    }
+
+    &-white {
+        background-color: $white-color;
+        color: $black-color;
+        box-shadow: rgb(0 0 0 / 20%) 1px 1px 5px 0px !important;
+    }
 
     &:hover {
         opacity: 0.9;

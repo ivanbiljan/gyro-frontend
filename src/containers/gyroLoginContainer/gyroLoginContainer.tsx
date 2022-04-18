@@ -24,13 +24,7 @@ function gyroLoginContainer() {
                     <GyroInput type={"password"} placeholder={"Enter password"} width={"100%"} height={"100%"} />
                 </div>
 
-                <GyroButton
-                    text="Continue"
-                    width="100%"
-                    height="2.5rem"
-                    color={variables.bluecolor}
-                    textColor={variables.whitecolor}
-                />
+                <GyroButton text="Continue" />
 
                 <div className="gyro-login-hr" />
 

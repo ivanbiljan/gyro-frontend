@@ -2,6 +2,7 @@ import "core-js/stable";
 import { render } from "react-dom";
 import { Provider } from "react-redux"; // import the provider
 import { BrowserRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import "regenerator-runtime/runtime";
 import { App } from "./app";
 import "./index.scss";
