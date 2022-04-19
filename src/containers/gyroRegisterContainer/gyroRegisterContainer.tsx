@@ -1,7 +1,7 @@
 import GyroButton from "components/gyroButton/gyroButton";
 import GyroInput from "components/gyroInput/gyroInput";
 import SvgImage from "components/svgImage/svgImage";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { GyroSvgEnum } from "utils/imageIconEnum";
 import { PATHS } from "utils/paths";
@@ -64,9 +64,7 @@ function GyroRegisterContainer() {
                     <div className="gyro-register-hr" />
 
                     <div className="gyro-register-links">
-                        <a href="" onClick={navigateToLoginScreen}>
-                            Already have a Gyro account? Log in
-                        </a>
+                        <Link to={PATHS.Login}>Already have a Gyro account? Log in</Link>
                     </div>
                 </div>
             </div>
