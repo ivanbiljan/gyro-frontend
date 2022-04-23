@@ -4,6 +4,7 @@ export interface GyroInputProps {
     placeholder: string;
     onTextChange?: (event: any) => void;
     type: "text" | "password";
+    name?: string;
     defaultValue?: string;
     header?: string;
     disabled?: boolean;
@@ -25,10 +26,12 @@ function GyroInput(props: GyroInputProps) {
     return (
         <div className="gyro-input-wrapper" style={{ width: props.width, height: props.height }}>
             <input
+                name={props.name}
                 className="gyro-input"
                 type={props.type}
                 placeholder={props.placeholder}
                 onKeyPress={handleKeypress}
+                onChange={props.onTextChange}
             />
         </div>
     );

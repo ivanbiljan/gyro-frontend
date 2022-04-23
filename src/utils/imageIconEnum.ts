@@ -1,8 +1,4 @@
 import atlassianLogo from "assets/svgs/atlassianSvg.svg";
-// export function GetImage(image: GyroImageEnum) {
-//     switch (image) {
-//     }
-// }
 
 export enum GyroSvgEnum {
     AtlassianLogo
