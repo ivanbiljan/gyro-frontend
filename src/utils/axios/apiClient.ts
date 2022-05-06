@@ -4,7 +4,7 @@ import { devConsoleError, devConsoleLog } from "utils/logging";
 import { GyroAxiosError, GyroAxiosResponse } from "./apiModels";
 
 if (location.hostname == "localhost") {
-    var port = 7061;
+    var port = 44384;
     axios.defaults.baseURL = "https://" + location.hostname + ":" + port;
 } else {
     axios.defaults.baseURL = "https://gyro-api.azurewebsites.net/";
@@ -29,9 +29,7 @@ axios.interceptors.request.use(
 // Add a response interceptor
 axios.interceptors.response.use(
     function (response: GyroAxiosResponse) {
-        devConsoleLog(
-            `[${response.status}] RESPONSE : ${response.config.url} \n\nJSON : ${JSON.stringify(response)}`
-        );
+        devConsoleLog(`[${response.status}] RESPONSE : ${response.config.url} \n\nJSON : ${JSON.stringify(response)}`);
 
         if (response.config.successMessage != undefined) {
             toast.success(response.config.successMessage);

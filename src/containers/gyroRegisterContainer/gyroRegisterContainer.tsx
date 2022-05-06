@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { registerUserThunk } from "redux/actions/authActions";
 import { nameof } from "ts-simple-nameof";
 import { GyroSvgEnum } from "utils/imageIconEnum";
 import { PATHS } from "utils/paths";
@@ -34,6 +35,10 @@ function GyroRegisterContainer() {
     };
 
     const showTodoToast = () => toast("This item is currently TODO");
+
+    const registerUser = () => {
+        dispatch(registerUserThunk({ ...formData, username: `${formData.firstName}` }));
+    };
 
     useEffect(() => console.log(formData), [formData]);
 
@@ -93,7 +98,7 @@ function GyroRegisterContainer() {
                         and acknowledge the <span className="blue-highlight">Privacy Policy</span>
                     </p>
 
-                    <GyroButton text="Sign up" className="gyro-register-input" />
+                    <GyroButton text="Sign up" className="gyro-register-input" onClick={registerUser} />
 
                     <p>OR</p>
 

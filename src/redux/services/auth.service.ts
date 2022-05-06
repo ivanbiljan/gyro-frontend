@@ -3,5 +3,7 @@ import { executeHttpPostAuthorized, executeUnauthorizedRequest } from "./service
 import { RegisterUserRequest } from "redux/models/authModels";
 
 export async function registerUser(request: RegisterUserRequest) {
-    await executeHttpPostAuthorized(registerRoute, request);
+    const params = new URLSearchParams({ ...request });
+
+    await executeHttpPostAuthorized(registerRoute, params);
 }
