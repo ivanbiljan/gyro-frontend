@@ -1,10 +1,12 @@
 import { combineReducers, configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 import modalReducer from "./reducers/modalReducer";
+import authReducer from "./reducers/authReducer";
 
 export const store = configureStore({
     reducer: combineReducers({
         modal: modalReducer,
+        auth: authReducer,
     }),
     // middleware: (getDefaultMiddleware) =>
     //     getDefaultMiddleware().prepend(rtkQueryErrorLogger),
