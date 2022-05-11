@@ -6,5 +6,11 @@ export interface RegisterUserRequest {
     lastName: string;
 }
 
-export interface RegisterUserResponse {
+export interface RegisterUserResponse {}
+
+export interface LoginUserRequest {
+    username: string;
+    password: string;
 }
+
+export interface LoginUserResponse {}

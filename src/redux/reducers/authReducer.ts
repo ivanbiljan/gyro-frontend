@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
-import { registerUserThunk } from "redux/actions/authActions";
+import { loginUserThunk, registerUserThunk } from "redux/actions/authActions";
 
 export enum LoggedInStateEnum {
     Uninitialized = 0,
@@ -23,7 +23,11 @@ const initialState: AuthState = {
 const slice = createSlice({
     name: "auth",
     initialState: initialState,
-    reducers: {},
+    reducers: {
+        logout(state) {
+            state.loggedInState = LoggedInStateEnum.Unauthorized;
+        },
+    },
     extraReducers: builder => {
         builder.addCase(registerUserThunk.rejected, () => {
             toast("Error");
@@ -31,6 +35,10 @@ const slice = createSlice({
 
         builder.addCase(registerUserThunk.fulfilled, () => {
             toast("Success");
+        });
+
+        builder.addCase(loginUserThunk.fulfilled, state => {
+            state.loggedInState = LoggedInStateEnum.LoggedIn;
         });
     },
 });

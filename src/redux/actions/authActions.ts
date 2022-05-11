@@ -1,10 +1,22 @@
 import { AsyncThunk, createAsyncThunk } from "@reduxjs/toolkit";
-import { RegisterUserRequest, RegisterUserResponse } from "redux/models/authModels";
-import { registerUser } from "redux/services/auth.service";
+import {
+    LoginUserRequest,
+    LoginUserResponse,
+    RegisterUserRequest,
+    RegisterUserResponse,
+} from "redux/models/authModels";
+import { loginUser, registerUser } from "redux/services/auth.service";
 
 export const registerUserThunk: AsyncThunk<RegisterUserResponse, RegisterUserRequest, {}> = createAsyncThunk<
     RegisterUserResponse,
     RegisterUserRequest
->("auth", async (request, thunkApi) => {
+>("auth/reigster", async (request, thunkApi) => {
     return await registerUser(request);
+});
+
+export const loginUserThunk: AsyncThunk<LoginUserResponse, LoginUserRequest, {}> = createAsyncThunk<
+    LoginUserResponse,
+    LoginUserRequest
+>("auth/login", async (request, thunkApi) => {
+    return await loginUser(request);
 });
